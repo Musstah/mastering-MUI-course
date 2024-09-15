@@ -2,10 +2,21 @@ import React from "react";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
+import Checkbox from "@mui/material/Checkbox";
+import { styled } from "@mui/material/styles";
+
 import { blueTextClass } from "../styles";
 
 import { useState } from "react";
 import { blue } from "@mui/material/colors";
+
+const CustomButton = styled(Button)(({ theme, ...ownerState }) =>
+  theme.unstable_sx({
+    color: ownerState.size === "small" ? "#FFF" : "#000",
+    bgcolor: "customColors.royalBlue",
+    boxShadow: (theme) => theme.shadows[15],
+  })
+);
 
 const MySpecialBox = (props) => {
   return (
@@ -65,9 +76,13 @@ const CoreConcepts = () => {
         <p>My paragraph</p>
       </Button> */}
       <Stack spacing={2} direction="row">
-        <Button sx={{ ...blueTextClass }} variant="contained">
+        <CustomButton size="small" sx={{}} variant="contained">
           Contained
+        </CustomButton>
+        <Button size="small" myCustomProp variant="outlined">
+          New Button
         </Button>
+        <Checkbox color="secondary" />
       </Stack>
     </>
   );

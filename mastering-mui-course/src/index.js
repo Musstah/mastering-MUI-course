@@ -6,7 +6,53 @@ import { createTheme, ThemeProvider } from "@mui/material";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const theme = createTheme({});
+// const theme = createTheme({
+//   components: {
+//     MuiButton: {
+//       styleOverrides: {
+//         text: {
+//           color: "blue",
+//           bgcolor: "red",
+//           borderRadius: 50,
+//           height: "5rem",
+//           width: "10rem",
+//         },
+//       },
+//     },
+//   },
+// });
+
+// const theme = createTheme({
+//   palette: {
+//     primary: {
+//       main: "#008000",
+//     },
+//     secondary: {
+//       main: "#FFA500",
+//     },
+//     customColors: {
+//       royalBlue: "#4169E1",
+//     },
+//   },
+//   components: {
+//     MuiButton: {
+//       defaultProps: {
+//         disableRipple: true,
+//       },
+//       styleOverrides: {
+//         outlined: ({ theme, ownerState }) => ({
+//           color: ownerState.size === "small" ? "red" : "black",
+//           borderColor: ownerState.myCustomProp
+//             ? "red"
+//             : theme.palette.customColors.royalBlue,
+//         }),
+//       },
+//     },
+//   },
+// });
+
+const theme = createTheme();
+
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
